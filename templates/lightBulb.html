@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>لامپ تغییر رنگ</title>
+  <style>
+body {
+  background-color: #000;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.lamp {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="lamp"></div>
+
+  <script>
+    const lamp = document.querySelector('.lamp');
+    let isOn = false;
+
+    lamp.addEventListener('click', function() {
+      if (isOn) {
+        document.body.style.transition = 'background-color 2s';
+        document.body.style.backgroundColor = '#000';
+        isOn = false;
+      } else {
+        document.body.style.transition = 'background-color 2s';
+        document.body.style.backgroundColor = '#ff00ff';
+        isOn = true;
+      }
+    });
+  </script>
+</body>
+</html>

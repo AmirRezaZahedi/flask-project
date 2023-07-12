@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ name }}!</h1>
+    
+    <div class="clock">
+        <div class="hand hour-hand" id="hour-hand"></div>
+        <div class="hand minute-hand" id="minute-hand"></div>
+        <div class="hand second-hand" id="second-hand"></div>
+    </div>
+    <br><br><br><br><br>
+    
+    <form action="{{ url_for('search') }}" method="GET" style="text-align: center;">
+        <h3 style="text-align: center;">filter title(subject)</h3>
+        <input type="text" name="search" placeholder="Search by title">
+        <input type="submit" value="Search" class="button">
+    </form>
+    <br><br>
+    <div class="user-count" id="userCountContainer">
+        <span id="userCountNumber">...</span> users are currently online.
+    </div>
+    
+    <br><br><br><br>
+    <h2>All Posts:</h2>
+    {% for post in posts %}
+        <div class="post">
+            <h3>{{ post[0] }}</h3>
+            <p>{{ post[1] }}</p>
+            <p class="author">By: {{ post[2] }}</p>
+        </div>
+    {% endfor %}
+
+    <div style="text-align: center;">
+        {% if  logged_in %}
+            <a href="{{ url_for('login') }}" class="button">Log in</a>
+        {% endif %}
+        <a href="{{ url_for('create_post') }}" class="button">Create Post</a>
+        {% if not logged_out %}
+            <a href="{{ url_for('logout') }}" class="out">Log Out</a>
+        {% endif %}
+    </div>
+    
+    <div class="lamp"></div>
+    <script src="{{ url_for('static', filename='mainScript.js') }}"></script>
+
+</body>
+</html>

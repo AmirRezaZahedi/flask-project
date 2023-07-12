@@ -1,0 +1,27 @@
+<!-- search.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}">
+</head>
+<body>
+    <h2>Search Results for "{{ search_query }}"</h2>
+
+    {% if results %}
+        {% for result in results %}
+            <div class="post">
+                <h3>{{ result[0] }}</h3>
+                <p>{{ result[1] }}</p>
+                <p class="author">By: {{ result[2] }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+    <div class="centered">
+        <a href="{{ url_for('unique') }}" class="button">Back to Main</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+:root {
+    --color--body-foreground: hsl(0, 0%, 90%);
+
+    --color--main-background: hsl(0, 70%, 10%, 0.75);
+    --color--main-box-shadow: hsl(0, 70%, 10%, 0.3);
+
+    --color--form-input-background: hsl(0, 0%, 90%, 0.2);
+    --color--form-input-background--invalid: hsl(0, 100%, 50%);
+    --color--form-button-background: hsl(0, 0%, 90%, 0.8);
+    --color--form-button-foreground: hsl(0, 70%, 10%);
+    --color--form-button-background--hover: hsl(0, 0%, 90%);
+    --color--form-paragraph-foreground: hsl(0, 0%, 90%, 0.8);
+    --color--form-link-foreground: hsl(0, 0%, 90%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+
+main {
+    background: linear-gradient(to right, #050066, #004080, #0059b3, #0073e6);
+    box-shadow: 0 4px 30px var(--color--main-box-shadow);
+    backdrop-filter: blur(0.5rem);
+}

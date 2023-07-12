@@ -1,0 +1,21 @@
+<!-- create_post.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CreatePost.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Create a New Post</h1>
+        <form action="{{ url_for('submit_post') }}" method="POST">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" minlength="5" maxlength="10"><br><br>
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" required></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

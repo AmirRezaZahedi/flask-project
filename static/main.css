@@ -1,0 +1,172 @@
+body {
+    background-color: #c5d5bb;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    position: relative;
+}
+
+.post {
+    border: 1px dashed #27b0de;
+    transition: 0.45s ease;
+    padding: 5px;
+    border-radius: 2.5px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.post p {
+    padding: 5px;
+}
+
+.post:hover {
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.post:hover p {
+    color: #0c0808;
+    font-size: 18px;
+}
+
+.post h3 {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+
+.post p {
+    font-size: 14px;
+    color: #666;
+    word-wrap: break-word;
+    direction: rtl;
+}
+
+.post .author {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+
+
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.45s ease;
+
+    background-color: #4CAF50;
+    color: #fff;
+
+}
+.out{
+    background-color:rgba(216, 24, 24, 0.865);
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.45s ease;
+}
+.out:hover{
+    background-color:rgba(232, 13, 13, 0.865);
+    padding: 12px 22px;
+    color:black;
+}
+.button:hover {
+    background-color: #0f9c16;
+    padding: 12px 22px;
+    color:black;
+}
+
+input[name="search"] {
+    padding: 9.25px;
+
+}
+
+.user-count {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.user-count:hover {
+    background-color: #e5e5e5;
+}
+
+.clock {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #e71919;
+    border-radius: 50%;
+
+}
+
+.hand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+
+    background-color: #333;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 70px;
+    margin-left: -2px;
+}
+
+.minute-hand {
+    width: 2px;
+    height: 90px;
+    margin-left: -1px;
+}
+
+.second-hand {
+    width: 1px;
+    height: 100px;
+    margin-left: 0;
+    background-color: red;
+}
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+  
+.lamp {
+    width: 100px;
+    height: 100px;
+    background-color: #f1dc53;
+    border-radius: 50%;
+    cursor: pointer;
+
+  }

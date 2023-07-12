@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Authentication</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='dynamic.css') }}" />
+</head>
+<body>
+    <main>
+        <form id="register" method="POST" action="{{ url_for('register') }}">
+            <label>
+                <span>Username</span>
+                <img src="{{ url_for('static', filename='icons/user.svg') }}" alt="" />
+                <input name="username" type="text" minlength="3" maxlength="32" placeholder="Username" required/>
+            </label>
+            <label>
+                <span>Email</span>
+                <img src="{{ url_for('static', filename='icons/email.svg') }}" alt="" />
+                <input name="email" type="email" required/>
+            </label>
+            <label>
+                <span>Phone</span>
+                <img src="{{ url_for('static', filename='icons/phone.svg') }}" alt="" />
+                <input name="phone" type="tel" pattern="(\+989|00989|09)[0-9]{9}" required/>
+            </label>
+            <label>
+                <span>Password</span>
+                <img src="{{ url_for('static', filename='icons/password.svg') }}" alt="" />
+                <input type="password" id="pwd" name="pwd" minlength="8" required><br>
+            </label>
+            <button type="submit">Register</button>
+            <p>
+                Already have an account?
+                <a href="#login">Log in</a>
+            </p>
+        </form>
+        <section>
+            <img src="{{ url_for('static', filename='illustrations/gangster.svg') }}" alt="" />
+        </section>
+        <form id="login" method="POST" action="{{ url_for('login') }}">
+            <label>
+                <span>Username</span>
+                <img src="{{ url_for('static', filename='icons/user.svg') }}" alt="" />
+                <input type="email" name="email" placeholder="email" required/>
+            </label>
+            <label>
+                <span>Password</span>
+                <img src="{{ url_for('static', filename='icons/password.svg') }}" alt="" />
+                <input type="password" name="password" placeholder="Password" required>
+            </label>
+            <button type="submit">Login</button>
+            <p>
+                Don't have an account?
+                <a href="#register">Register</a>
+            </p>
+            <p>
+                Forget password?
+                <a id="forget" href="/forgetpassword">forget</a>
+            </p>            
+        </form>
+
+    </main>
+</body>
+</html>
